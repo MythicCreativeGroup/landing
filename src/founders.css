@@ -1,0 +1,104 @@
+/* --- THIS IS THE FINAL, REFINED FOUNDERS STYLESHEET --- */
+
+/* 1. WIDEN THE SECTION CONTAINER */
+.founders-section {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.founders-grid {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;
+}
+
+.founder-card {
+  max-width: 380px; 
+  /* --- THIS IS THE FIX --- */
+  /* These three lines will perfectly center the portrait and text within the card */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.founder-portrait {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #D4AF37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.founder-name {
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+/* 2. INCREASE TITLE FONT SIZE */
+.founder-title {
+  font-size: 1.2rem;
+  color: #D4AF37;
+  font-weight: 600;
+}
+
+/* 3. STYLE THE EMAIL FOR DISTINCTION */
+.founder-email {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.founder-email:hover {
+  color: #D4AF37;
+}
+
+.founder-bio {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  text-align: left;
+}
+
+
+/* --- ANIMATION STYLES (UNCHANGED) --- */
+
+.founders-section.visible .founder-portrait {
+  animation: pop-and-fade 1s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.founders-section.visible .founder-card .founder-name,
+.founders-section.visible .founder-card .founder-title,
+.founders-section.visible .founder-card .founder-bio,
+.founders-section.visible .founder-card .founder-email {
+    animation: rise-and-fade 1s ease-out forwards;
+    animation-delay: 0.4s;
+}
+
+@keyframes rise-and-fade {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop-and-fade {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

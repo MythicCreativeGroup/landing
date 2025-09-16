@@ -1,0 +1,18 @@
+/* --- Philosophy Section Specific Styles --- */
+
+/* 1. Center-justifies the entire mission statement block */
+.philosophy-text {
+  text-align: center;
+}
+
+/* 2. Makes the standard paragraph text slightly larger for impact */
+.philosophy-text p {
+  font-size: 1.15rem; /* Increased from the default */
+  line-height: 1.6; /* Improves readability */
+}
+
+/* 3. Makes our final tagline larger and gives it space to breathe */
+.philosophy-text .tagline {
+  font-size: 1.4rem; /* Noticeably larger than the text above */
+  margin-top: 2rem; /* Adds a bit of space before the final line */
+}
