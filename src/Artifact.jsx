@@ -2,10 +2,11 @@ import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useGLTF, Environment } from '@react-three/drei';
 import * as THREE from 'three';
-import modelPath from './assets/Artifact_v3_Baked.glb'; // <-- THIS IS THE FIX: We import the model from the assets folder.
+// <-- THIS IS THE FINAL, CRITICAL FIX. The '?url' tells the build system to treat this as a file asset, not code.
+import modelPath from './assets/Artifact_v3_Baked.glb?url'; 
 
 function Model({ isScrolled, mousePosition }) {
-  // We now use the imported path variable. This tells the build system to find the real file.
+  // We now use the imported path variable. This will be the correct public URL to the real model.
   const { scene } = useGLTF(modelPath); 
   const ref = useRef();
 
@@ -50,8 +51,5 @@ function Artifact({ isScrolled, mousePosition }) {
     </Canvas>
   );
 }
-
-// We no longer need this line, as the model is imported directly.
-// useGLTF.preload('/Artifact_v3_Baked.glb');
 
 export default Artifact;
